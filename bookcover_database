@@ -1,0 +1,33 @@
+CREATE TABLE premade_book_covers (id INTEGER PRIMARY KEY, code INTEGER, title TEXT, genre TEXT, subgenre TEXT, price INTEGER, option TEXT, number_of_covers INTEGER, cover_type TEXT, listing_date text);
+INSERT INTO premade_book_covers VALUES (1, 1095, "Dreams Of a Night With Hiro", "steamy romance", "contemporary",  250, "series", 3, "ebook", "2021-7-3");
+INSERT INTO premade_book_covers VALUES (2, 1089, "A One Night Fumble", "steamy romance", "sports", 250, "series", 3, "ebook", "2021-3-6");
+INSERT INTO premade_book_covers VALUES (3, 1088, "Flirty", "steamy romance", "contemporary", 250, "series", 3, "ebook", "2021-4-24");
+INSERT INTO premade_book_covers VALUES (4, 1087, "You're the 1", "sweet romance", "contemporary", 250, "series", 3, "ebook", "2021-9-19");
+INSERT INTO premade_book_covers VALUES (5, 1072, "Gentrified Wine", "women's fiction", "small town", 200, "series", 2, "ebook", "2020-6-29"); 
+INSERT INTO premade_book_covers VALUES (6, 1047, "Hard Rockers Dance Slow", "clean romance", "young adult", 200, "series", 3, "ebook", "2020-6-23");
+INSERT INTO premade_book_covers VALUES (7, 1012, "Widow's Haunt", "cosy", "paranormal", 250, "series", 3, "ebook", "2020-6-23");
+INSERT INTO premade_book_covers VALUES (8, 1001, "A Dish of Mayhem", "cosy", "mystery", 250, "series", 3, "ebook", "2020-6-6");
+INSERT INTO premade_book_covers VALUES (9, 1094, "Sand Wars", "science fiction", "space opera", 125, "stand alone", 1, "ebook", "2021-9-16");
+INSERT INTO premade_book_covers VALUES (10, 1086, "Darkest Desire", "steamy romance", "contemporary", 175, "stand alone", 1, "ebook, paperback, audio", "2020-4-14");
+INSERT INTO premade_book_covers VALUES (11, 1085, "Sexing and Other Midlife Whoas", "women's fiction", "relationship growth", 125, "stand alone", 1, "ebook, paperback", "2020-9-22");
+INSERT INTO premade_book_covers VALUES (12, 1084, "Cross Lights Harbor", "women's fiction", "hometown", 125, "stand alone", 1, "ebook, paperback", "2020-9-22");
+INSERT INTO premade_book_covers VALUES (13, 1083, "Every Morning With You", "clean romance", "contemporary", 125, "stand alone", 1, "ebook, paperback", "2020-9-22");
+INSERT INTO premade_book_covers VALUES (14, 1082, "Upon a Winter's Kiss", "sweet romance", "POC contemporary", 125, "stand alone", 1, "ebook, paperback", "2020-9-22");
+INSERT INTO premade_book_covers VALUES (15, 1080, "Vacationing With Coconut Goggles", "steamy romance", "romcom", 125, "stand alone", 1, "ebook, paperback", "2020-9-22");
+INSERT INTO premade_book_covers VALUES (16, 1081, "City Boy Meet Country Girl", "clean romance", "contemporary cowgirl", 75, "stand alone", 1, "ebook", "2020-6-23");
+INSERT INTO premade_book_covers VALUES (17, 1079, "Crushing On Jayson", "steamy romance", "POC Contemporary", 75, "stand alone", 1, "ebook", "2020-9-22");
+INSERT INTO premade_book_covers VALUES (18, 1077, "Labor In Love", "clean romance", "POC contemporary", 75, "stand alone", 1, "ebook", "2020-6-23");
+INSERT INTO premade_book_covers VALUES (19, 175, "An Ocean Of Hearts", "women's fiction", "inspirational", 175, "stand alone", 1, "ebook, paperback, audio", "2020-9-22");
+
+
+
+-- display available genre options and count
+SELECT genre, COUNT(genre) FROM premade_book_covers GROUP BY genre;
+
+-- display prices with total product value
+Select price, SUM(price) FROM premade_book_covers GROUP BY price;
+
+
+-- display the database ordered by listing date
+SELECT * FROM premade_book_covers ORDER BY listing_date asc;
+
